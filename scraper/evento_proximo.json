@@ -1,0 +1,752 @@
+{
+  "evento": {
+    "nombre": "UFC Fight Night: Emmett vs. Vallejos",
+    "fecha": "March 14, 2026",
+    "url_detalles": "http://ufcstats.com/event-details/babc6b5745335f18"
+  },
+  "peleas": [
+    {
+      "peleador_1": {
+        "nombre": "Josh Emmett",
+        "perfil": "http://ufcstats.com/fighter-details/fba03cd6cc28dc41",
+        "estadisticas": {
+          "nombre": "Josh Emmett",
+          "record": "19-6-0",
+          "height": "",
+          "weight": "",
+          "reach": "",
+          "stance": "Orthodox",
+          "dob": "Mar 04, 1985",
+          "striking": {
+            "slpm": 3.72,
+            "str_acc": 0.35,
+            "sapm": 4.43,
+            "str_def": 0.6
+          },
+          "grappling": {
+            "td_avg": 1.08,
+            "td_acc": 0.37,
+            "td_def": 0.43,
+            "sub_avg": 0.1
+          }
+        }
+      },
+      "peleador_2": {
+        "nombre": "Kevin Vallejos",
+        "perfil": "http://ufcstats.com/fighter-details/239d8e5359022f3b",
+        "estadisticas": {
+          "nombre": "Kevin Vallejos",
+          "record": "17-1-0",
+          "height": "",
+          "weight": "",
+          "reach": "",
+          "stance": "Switch",
+          "dob": "Dec 08, 2001",
+          "striking": {
+            "slpm": 5.78,
+            "str_acc": 0.46,
+            "sapm": 4.71,
+            "str_def": 0.56
+          },
+          "grappling": {
+            "td_avg": 0.71,
+            "td_acc": 0.28,
+            "td_def": 0.83,
+            "sub_avg": 0.0
+          }
+        }
+      },
+      "weight_class": "Featherweight"
+    },
+    {
+      "peleador_1": {
+        "nombre": "Amanda Lemos",
+        "perfil": "http://ufcstats.com/fighter-details/3df5493bb279226f",
+        "estadisticas": {
+          "nombre": "Amanda Lemos",
+          "record": "15-5-1",
+          "height": "",
+          "weight": "",
+          "reach": "",
+          "stance": "Southpaw",
+          "dob": "May 22, 1987",
+          "striking": {
+            "slpm": 2.75,
+            "str_acc": 0.55,
+            "sapm": 3.24,
+            "str_def": 0.45
+          },
+          "grappling": {
+            "td_avg": 1.02,
+            "td_acc": 0.62,
+            "td_def": 0.64,
+            "sub_avg": 0.7
+          }
+        }
+      },
+      "peleador_2": {
+        "nombre": "Gillian Robertson",
+        "perfil": "http://ufcstats.com/fighter-details/38c7f72747f4f712",
+        "estadisticas": {
+          "nombre": "Gillian Robertson",
+          "record": "16-8-0",
+          "height": "",
+          "weight": "",
+          "reach": "",
+          "stance": "Orthodox",
+          "dob": "May 17, 1995",
+          "striking": {
+            "slpm": 2.86,
+            "str_acc": 0.48,
+            "sapm": 2.86,
+            "str_def": 0.56
+          },
+          "grappling": {
+            "td_avg": 2.74,
+            "td_acc": 0.4,
+            "td_def": 0.41,
+            "sub_avg": 0.9
+          }
+        }
+      },
+      "weight_class": "Women's Strawweight"
+    },
+    {
+      "peleador_1": {
+        "nombre": "Ion Cutelaba",
+        "perfil": "http://ufcstats.com/fighter-details/cd13728ae1151f46",
+        "estadisticas": {
+          "nombre": "Ion Cutelaba",
+          "record": "19-11-1 (1 NC)",
+          "height": "",
+          "weight": "",
+          "reach": "",
+          "stance": "Southpaw",
+          "dob": "Dec 14, 1993",
+          "striking": {
+            "slpm": 4.26,
+            "str_acc": 0.43,
+            "sapm": 3.34,
+            "str_def": 0.47
+          },
+          "grappling": {
+            "td_avg": 3.77,
+            "td_acc": 0.49,
+            "td_def": 0.75,
+            "sub_avg": 0.1
+          }
+        }
+      },
+      "peleador_2": {
+        "nombre": "Oumar Sy",
+        "perfil": "http://ufcstats.com/fighter-details/46e2011d92463b7e",
+        "estadisticas": {
+          "nombre": "Oumar Sy",
+          "record": "12-1-0",
+          "height": "",
+          "weight": "",
+          "reach": "",
+          "stance": "Orthodox",
+          "dob": "Nov 21, 1995",
+          "striking": {
+            "slpm": 3.67,
+            "str_acc": 0.48,
+            "sapm": 1.72,
+            "str_def": 0.7
+          },
+          "grappling": {
+            "td_avg": 2.73,
+            "td_acc": 0.36,
+            "td_def": 1.0,
+            "sub_avg": 0.4
+          }
+        }
+      },
+      "weight_class": "Light Heavyweight"
+    },
+    {
+      "peleador_1": {
+        "nombre": "Andre Fili",
+        "perfil": "http://ufcstats.com/fighter-details/8fd808923cffff82",
+        "estadisticas": {
+          "nombre": "Andre Fili",
+          "record": "25-12-0 (1 NC)",
+          "height": "",
+          "weight": "",
+          "reach": "",
+          "stance": "Orthodox",
+          "dob": "Jun 25, 1990",
+          "striking": {
+            "slpm": 3.87,
+            "str_acc": 0.37,
+            "sapm": 4.23,
+            "str_def": 0.51
+          },
+          "grappling": {
+            "td_avg": 2.22,
+            "td_acc": 0.45,
+            "td_def": 0.71,
+            "sub_avg": 0.2
+          }
+        }
+      },
+      "peleador_2": {
+        "nombre": "Jose Delgado",
+        "perfil": "http://ufcstats.com/fighter-details/7d6ceff6747f2de2",
+        "estadisticas": {
+          "nombre": "Jose Delgado",
+          "record": "10-2-0",
+          "height": "",
+          "weight": "",
+          "reach": "",
+          "stance": "Switch",
+          "dob": "Apr 21, 1998",
+          "striking": {
+            "slpm": 8.22,
+            "str_acc": 0.54,
+            "sapm": 5.44,
+            "str_def": 0.47
+          },
+          "grappling": {
+            "td_avg": 1.81,
+            "td_acc": 0.42,
+            "td_def": 0.6,
+            "sub_avg": 0.0
+          }
+        }
+      },
+      "weight_class": "Featherweight"
+    },
+    {
+      "peleador_1": {
+        "nombre": "Marwan Rahiki",
+        "perfil": "http://ufcstats.com/fighter-details/6eedb757f13b9978",
+        "estadisticas": {
+          "nombre": "Marwan Rahiki",
+          "record": "7-0-0",
+          "height": "",
+          "weight": "",
+          "reach": "",
+          "stance": "Orthodox",
+          "dob": "May 10, 2002",
+          "striking": {
+            "slpm": 5.96,
+            "str_acc": 0.47,
+            "sapm": 6.1,
+            "str_def": 0.56
+          },
+          "grappling": {
+            "td_avg": 0.0,
+            "td_acc": 0.0,
+            "td_def": 1.0,
+            "sub_avg": 2.1
+          }
+        }
+      },
+      "peleador_2": {
+        "nombre": "Harry Hardwick",
+        "perfil": "http://ufcstats.com/fighter-details/2dbc60c52de126d8",
+        "estadisticas": {
+          "nombre": "Harry Hardwick",
+          "record": "13-4-1",
+          "height": "",
+          "weight": "",
+          "reach": "",
+          "stance": "Switch",
+          "dob": "Sep 29, 1994",
+          "striking": {
+            "slpm": 2.39,
+            "str_acc": 0.34,
+            "sapm": 7.16,
+            "str_def": 0.4
+          },
+          "grappling": {
+            "td_avg": 0.0,
+            "td_acc": 0.0,
+            "td_def": 0.0,
+            "sub_avg": 0.0
+          }
+        }
+      },
+      "weight_class": "Featherweight"
+    },
+    {
+      "peleador_1": {
+        "nombre": "Vitor Petrino",
+        "perfil": "http://ufcstats.com/fighter-details/71171fc96445bf65",
+        "estadisticas": {
+          "nombre": "Vitor Petrino",
+          "record": "13-2-0",
+          "height": "",
+          "weight": "",
+          "reach": "",
+          "stance": "Orthodox",
+          "dob": "Aug 28, 1997",
+          "striking": {
+            "slpm": 2.75,
+            "str_acc": 0.46,
+            "sapm": 2.48,
+            "str_def": 0.47
+          },
+          "grappling": {
+            "td_avg": 3.04,
+            "td_acc": 0.51,
+            "td_def": 0.79,
+            "sub_avg": 0.8
+          }
+        }
+      },
+      "peleador_2": {
+        "nombre": "Steven Asplund",
+        "perfil": "http://ufcstats.com/fighter-details/e56cee1ad697db04",
+        "estadisticas": {
+          "nombre": "Steven Asplund",
+          "record": "7-1-0",
+          "height": "",
+          "weight": "",
+          "reach": "",
+          "stance": "Orthodox",
+          "dob": "Jul 16, 1998",
+          "striking": {
+            "slpm": 19.93,
+            "str_acc": 0.58,
+            "sapm": 7.49,
+            "str_def": 0.57
+          },
+          "grappling": {
+            "td_avg": 0.0,
+            "td_acc": 0.0,
+            "td_def": 1.0,
+            "sub_avg": 0.0
+          }
+        }
+      },
+      "weight_class": "Heavyweight"
+    },
+    {
+      "peleador_1": {
+        "nombre": "Charles Johnson",
+        "perfil": "http://ufcstats.com/fighter-details/814e5233e2acf2ee",
+        "estadisticas": {
+          "nombre": "Charles Johnson",
+          "record": "18-8-0",
+          "height": "",
+          "weight": "",
+          "reach": "",
+          "stance": "Switch",
+          "dob": "Jan 10, 1991",
+          "striking": {
+            "slpm": 4.68,
+            "str_acc": 0.49,
+            "sapm": 3.94,
+            "str_def": 0.56
+          },
+          "grappling": {
+            "td_avg": 0.55,
+            "td_acc": 0.2,
+            "td_def": 0.66,
+            "sub_avg": 0.4
+          }
+        }
+      },
+      "peleador_2": {
+        "nombre": "Bruno Silva",
+        "perfil": "http://ufcstats.com/fighter-details/294aa73dbf37d281",
+        "estadisticas": {
+          "nombre": "Bruno Silva",
+          "record": "15-7-2 (1 NC)",
+          "height": "",
+          "weight": "",
+          "reach": "",
+          "stance": "Orthodox",
+          "dob": "Mar 16, 1990",
+          "striking": {
+            "slpm": 3.82,
+            "str_acc": 0.5,
+            "sapm": 4.55,
+            "str_def": 0.52
+          },
+          "grappling": {
+            "td_avg": 2.3,
+            "td_acc": 0.29,
+            "td_def": 0.63,
+            "sub_avg": 0.3
+          }
+        }
+      },
+      "weight_class": "Flyweight"
+    },
+    {
+      "peleador_1": {
+        "nombre": "Brad Tavares",
+        "perfil": "http://ufcstats.com/fighter-details/0c6d9ea8306c029e",
+        "estadisticas": {
+          "nombre": "Brad Tavares",
+          "record": "21-12-0",
+          "height": "",
+          "weight": "",
+          "reach": "",
+          "stance": "Orthodox",
+          "dob": "Dec 21, 1987",
+          "striking": {
+            "slpm": 3.42,
+            "str_acc": 0.43,
+            "sapm": 3.36,
+            "str_def": 0.54
+          },
+          "grappling": {
+            "td_avg": 0.73,
+            "td_acc": 0.26,
+            "td_def": 0.81,
+            "sub_avg": 0.0
+          }
+        }
+      },
+      "peleador_2": {
+        "nombre": "Eryk Anders",
+        "perfil": "http://ufcstats.com/fighter-details/cad24459b28592ca",
+        "estadisticas": {
+          "nombre": "Eryk Anders",
+          "record": "17-9-0 (1 NC)",
+          "height": "",
+          "weight": "",
+          "reach": "",
+          "stance": "Southpaw",
+          "dob": "Apr 21, 1987",
+          "striking": {
+            "slpm": 3.51,
+            "str_acc": 0.48,
+            "sapm": 4.09,
+            "str_def": 0.5
+          },
+          "grappling": {
+            "td_avg": 1.75,
+            "td_acc": 0.24,
+            "td_def": 0.8,
+            "sub_avg": 0.1
+          }
+        }
+      },
+      "weight_class": "Middleweight"
+    },
+    {
+      "peleador_1": {
+        "nombre": "Chris Curtis",
+        "perfil": "http://ufcstats.com/fighter-details/5442f1bc4b47eaf3",
+        "estadisticas": {
+          "nombre": "Chris Curtis",
+          "record": "32-12-0 (1 NC)",
+          "height": "",
+          "weight": "",
+          "reach": "",
+          "stance": "Orthodox",
+          "dob": "Jul 15, 1987",
+          "striking": {
+            "slpm": 5.98,
+            "str_acc": 0.5,
+            "sapm": 6.19,
+            "str_def": 0.54
+          },
+          "grappling": {
+            "td_avg": 0.0,
+            "td_acc": 0.0,
+            "td_def": 0.82,
+            "sub_avg": 0.0
+          }
+        }
+      },
+      "peleador_2": {
+        "nombre": "Myktybek Orolbai",
+        "perfil": "http://ufcstats.com/fighter-details/bf2c8e01b07d3eb1",
+        "estadisticas": {
+          "nombre": "Myktybek Orolbai",
+          "record": "15-2-1",
+          "height": "",
+          "weight": "",
+          "reach": "",
+          "stance": "Orthodox",
+          "dob": "Feb 10, 1998",
+          "striking": {
+            "slpm": 3.24,
+            "str_acc": 0.48,
+            "sapm": 3.31,
+            "str_def": 0.5
+          },
+          "grappling": {
+            "td_avg": 5.48,
+            "td_acc": 0.45,
+            "td_def": 0.4,
+            "sub_avg": 0.6
+          }
+        }
+      },
+      "weight_class": "Welterweight"
+    },
+    {
+      "peleador_1": {
+        "nombre": "Bolaji Oki",
+        "perfil": "http://ufcstats.com/fighter-details/4bdedbdeedff7d1d",
+        "estadisticas": {
+          "nombre": "Bolaji Oki",
+          "record": "10-3-0",
+          "height": "",
+          "weight": "",
+          "reach": "",
+          "stance": "Orthodox",
+          "dob": "Nov 15, 1995",
+          "striking": {
+            "slpm": 6.59,
+            "str_acc": 0.44,
+            "sapm": 5.15,
+            "str_def": 0.61
+          },
+          "grappling": {
+            "td_avg": 1.01,
+            "td_acc": 0.6,
+            "td_def": 0.66,
+            "sub_avg": 0.0
+          }
+        }
+      },
+      "peleador_2": {
+        "nombre": "Manoel Sousa",
+        "perfil": "http://ufcstats.com/fighter-details/5870c541798124ae",
+        "estadisticas": {
+          "nombre": "Manoel Sousa",
+          "record": "13-1-0",
+          "height": "",
+          "weight": "",
+          "reach": "",
+          "stance": "Orthodox",
+          "dob": "Jun 04, 1997",
+          "striking": {
+            "slpm": 3.23,
+            "str_acc": 0.58,
+            "sapm": 1.31,
+            "str_def": 0.55
+          },
+          "grappling": {
+            "td_avg": 0.0,
+            "td_acc": 0.0,
+            "td_def": 0.62,
+            "sub_avg": 2.3
+          }
+        }
+      },
+      "weight_class": "Lightweight"
+    },
+    {
+      "peleador_1": {
+        "nombre": "Luan Lacerda",
+        "perfil": "http://ufcstats.com/fighter-details/6fc506e1099afe20",
+        "estadisticas": {
+          "nombre": "Luan Lacerda",
+          "record": "13-3-0",
+          "height": "",
+          "weight": "",
+          "reach": "",
+          "stance": "Orthodox",
+          "dob": "Jan 07, 1993",
+          "striking": {
+            "slpm": 4.02,
+            "str_acc": 0.46,
+            "sapm": 5.79,
+            "str_def": 0.46
+          },
+          "grappling": {
+            "td_avg": 2.29,
+            "td_acc": 0.41,
+            "td_def": 0.66,
+            "sub_avg": 0.9
+          }
+        }
+      },
+      "peleador_2": {
+        "nombre": "Hecher Sosa",
+        "perfil": "http://ufcstats.com/fighter-details/ec3bd30378d63dd1",
+        "estadisticas": {
+          "nombre": "Hecher Sosa",
+          "record": "14-1-0",
+          "height": "",
+          "weight": "",
+          "reach": "",
+          "stance": "Orthodox",
+          "dob": "Aug 25, 1995",
+          "striking": {
+            "slpm": 2.13,
+            "str_acc": 0.5,
+            "sapm": 0.87,
+            "str_def": 0.55
+          },
+          "grappling": {
+            "td_avg": 4.0,
+            "td_acc": 0.36,
+            "td_def": 1.0,
+            "sub_avg": 2.0
+          }
+        }
+      },
+      "weight_class": "Bantamweight"
+    },
+    {
+      "peleador_1": {
+        "nombre": "Bia Mesquita",
+        "perfil": "http://ufcstats.com/fighter-details/eff9074bc066f0f2",
+        "estadisticas": {
+          "nombre": "Bia Mesquita",
+          "record": "6-0-0",
+          "height": "",
+          "weight": "",
+          "reach": "",
+          "stance": "Orthodox",
+          "dob": "Apr 07, 1991",
+          "striking": {
+            "slpm": 4.98,
+            "str_acc": 0.57,
+            "sapm": 0.83,
+            "str_def": 0.73
+          },
+          "grappling": {
+            "td_avg": 4.15,
+            "td_acc": 0.66,
+            "td_def": 0.0,
+            "sub_avg": 2.1
+          }
+        }
+      },
+      "peleador_2": {
+        "nombre": "Montse Rendon",
+        "perfil": "http://ufcstats.com/fighter-details/60193e707634e560",
+        "estadisticas": {
+          "nombre": "Montse Rendon",
+          "record": "7-1-0",
+          "height": "",
+          "weight": "",
+          "reach": "",
+          "stance": "Orthodox",
+          "dob": "Mar 16, 1989",
+          "striking": {
+            "slpm": 3.09,
+            "str_acc": 0.28,
+            "sapm": 3.42,
+            "str_def": 0.59
+          },
+          "grappling": {
+            "td_avg": 2.0,
+            "td_acc": 0.37,
+            "td_def": 1.0,
+            "sub_avg": 0.3
+          }
+        }
+      },
+      "weight_class": "Women's Bantamweight"
+    },
+    {
+      "peleador_1": {
+        "nombre": "Elijah Smith",
+        "perfil": "http://ufcstats.com/fighter-details/7478b7f959ba61f5",
+        "estadisticas": {
+          "nombre": "Elijah Smith",
+          "record": "9-1-0",
+          "height": "",
+          "weight": "",
+          "reach": "",
+          "stance": "Orthodox",
+          "dob": "Sep 05, 2002",
+          "striking": {
+            "slpm": 4.45,
+            "str_acc": 0.47,
+            "sapm": 3.4,
+            "str_def": 0.47
+          },
+          "grappling": {
+            "td_avg": 3.51,
+            "td_acc": 0.53,
+            "td_def": 0.57,
+            "sub_avg": 0.9
+          }
+        }
+      },
+      "peleador_2": {
+        "nombre": "SuYoung You",
+        "perfil": "http://ufcstats.com/fighter-details/a474aade8eb3a8f0",
+        "estadisticas": {
+          "nombre": "SuYoung You",
+          "record": "16-3-0 (2 NC)",
+          "height": "",
+          "weight": "",
+          "reach": "",
+          "stance": "Orthodox",
+          "dob": "Dec 11, 1995",
+          "striking": {
+            "slpm": 2.28,
+            "str_acc": 0.46,
+            "sapm": 1.96,
+            "str_def": 0.7
+          },
+          "grappling": {
+            "td_avg": 3.8,
+            "td_acc": 0.47,
+            "td_def": 0.66,
+            "sub_avg": 0.4
+          }
+        }
+      },
+      "weight_class": "Bantamweight"
+    },
+    {
+      "peleador_1": {
+        "nombre": "Piera Rodriguez",
+        "perfil": "http://ufcstats.com/fighter-details/e375cb5caf4717b6",
+        "estadisticas": {
+          "nombre": "Piera Rodriguez",
+          "record": "11-2-0",
+          "height": "",
+          "weight": "",
+          "reach": "",
+          "stance": "Orthodox",
+          "dob": "Nov 11, 1992",
+          "striking": {
+            "slpm": 3.54,
+            "str_acc": 0.47,
+            "sapm": 2.81,
+            "str_def": 0.55
+          },
+          "grappling": {
+            "td_avg": 4.53,
+            "td_acc": 0.54,
+            "td_def": 0.73,
+            "sub_avg": 0.0
+          }
+        }
+      },
+      "peleador_2": {
+        "nombre": "Sam Hughes",
+        "perfil": "http://ufcstats.com/fighter-details/e94085e821bd81de",
+        "estadisticas": {
+          "nombre": "Sam Hughes",
+          "record": "11-6-0",
+          "height": "",
+          "weight": "",
+          "reach": "",
+          "stance": "Orthodox",
+          "dob": "Jun 28, 1992",
+          "striking": {
+            "slpm": 4.34,
+            "str_acc": 0.46,
+            "sapm": 4.44,
+            "str_def": 0.58
+          },
+          "grappling": {
+            "td_avg": 1.23,
+            "td_acc": 0.35,
+            "td_def": 0.6,
+            "sub_avg": 0.2
+          }
+        }
+      },
+      "weight_class": "Women's Strawweight"
+    }
+  ],
+  "extraido_en": "2026-03-09T13:10:32.402118"
+}

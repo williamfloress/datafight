@@ -19,4 +19,5 @@ ENV PORT=5000
 EXPOSE 5000
 
 # Usar shell para expandir $PORT en runtime
-CMD ["sh", "-c", "gunicorn --bind 0.0.0.0:${PORT} server:app"]
+# timeout=600 (10 min): el scraping puede tardar 2-5 min según el frontend
+CMD ["sh", "-c", "gunicorn --bind 0.0.0.0:${PORT} --timeout 600 server:app"]

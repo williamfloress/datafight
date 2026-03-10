@@ -43,7 +43,23 @@ Script en Python que extrae del evento UFC más próximo:
 
 **Fuente:** [ufcstats.com](http://ufcstats.com/statistics/events/upcoming)
 
-**Salida:** `scraper/evento_proximo.json` — datos crudos listos para Fase 2 (Feature Engineering).
+**Salida:** `scraper/evento_proximo.json` — datos crudos listos para el predictor.
+
+### Predictor (Fase 2–3)
+
+Script que calcula probabilidades de victoria por pelea usando la lógica de `documentation/logica_probabilistica.md`:
+
+1. **Net Striking:** SLpM - SApM
+2. **Grappling:** TD_Avg × (1 - TD_Def del oponente)
+3. **Edad:** Si diferencia ≥ 5 años, el más joven recibe ~70%
+
+**Entrada:** `scraper/evento_proximo.json`  
+**Salida:** `output/predicciones.json`
+
+```bash
+cd V1/predictor
+python predictor.py
+```
 
 ---
 
@@ -62,10 +78,27 @@ playwright install chromium
 
 ## Uso
 
+**1. Extraer datos del evento próximo:**
 ```bash
 cd V1/scraper
 python scraper_ufc.py
 ```
+
+**2. Calcular predicciones:**
+```bash
+cd V1/predictor
+python predictor.py
+```
+
+**3. Iniciar el servidor:**
+```bash
+cd V1
+pip install -r requirements.txt
+python server.py
+```
+Abrir http://localhost:5000/
+
+**Un solo botón:** "Analizar próximo evento" ejecuta scraper + predictor en memoria (sin archivos). Rate limit: 1 análisis cada 30 min para proteger ufcstats.com.
 
 ## Estructura del JSON generado
 
@@ -92,6 +125,33 @@ python scraper_ufc.py
     }
   ],
   "extraido_en": "2026-03-09T..."
+}
+```
+
+### Estructura de predicciones.json
+
+```json
+{
+  "evento": { "nombre": "...", "fecha": "...", "url_detalles": "..." },
+  "peleas": [
+    {
+      "peleador_1": {
+        "nombre": "...",
+        "perfil": "...",
+        "probabilidad_victoria": 0.21,
+        "record": "19-6-0"
+      },
+      "peleador_2": { ... },
+      "weight_class": "Featherweight",
+      "ganador_predicho": "Kevin Vallejos",
+      "detalle_modelo": {
+        "net_striking": { "peleador_1": -0.71, "peleador_2": 1.07 },
+        "grappling_efectividad": { "peleador_1_vs_2": 0.18, "peleador_2_vs_1": 0.4 },
+        "edad": { "peleador_1": 41, "peleador_2": 25 }
+      }
+    }
+  ],
+  "generado_en": "2026-03-09T..."
 }
 ```
 

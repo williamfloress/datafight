@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DATAFIGHT - Predicciones UFC basadas en datos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <h1 class="logo">DATAFIGHT</h1>
+    <div class="evento-info" id="eventoInfo">
+      <h2 class="evento-nombre" id="eventoNombre">Descubre las probabilidades del próximo evento UFC</h2>
+      <p class="evento-fecha" id="eventoFecha"></p>
+    </div>
+    <div class="actions">
+      <button type="button" class="btn btn-primary" id="btnAnalizar" title="Obtén predicciones basadas en estadísticas de ufcstats.com">
+        Obtener predicciones
+      </button>
+      <button type="button" class="btn btn-secondary" id="btnLimpiar" title="Elimina el análisis y empieza de nuevo">
+        Nuevo análisis
+      </button>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="peleas-grid" id="peleasGrid">
+      <!-- Tarjetas generadas por JS -->
+    </div>
+    <div class="error-message" id="errorMessage" hidden>
+      <p>¡Pulsa el botón para obtener las predicciones del próximo evento UFC!</p>
+      <p class="error-hint">El análisis toma entre 2 y 5 minutos.</p>
+      <p class="error-explanation">Comparamos striking (golpes conectados y recibidos), grappling (derribos y defensa) y edad de ambos peleadores para estimar quién tiene más probabilidades de ganar.</p>
+    </div>
+    <div class="loading" id="loading" hidden>
+      <span class="loading-spinner"></span>
+      <p>Calculando probabilidades...</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>Desarrollado por William Flores</p>
+    <p><span id="eventoLinkWrapper" hidden><a class="evento-link" id="eventoLink" href="#" target="_blank" rel="noopener">Ver en UFC Stats</a> · </span>Datos extraídos de <a href="http://ufcstats.com" target="_blank" rel="noopener">ufcstats.com</a></p>
+    <p class="disclaimer">El análisis se basa exclusivamente en estadísticas previas de los peleadores. Las predicciones son probabilísticas y no garantizan resultados. Este proyecto es solo informativo; no constituye asesoría ni recomendación para apuestas o decisiones financieras.</p>
+  </footer>
+
+  <div id="statsHelpModal" class="stats-help-modal" hidden aria-hidden="true">
+    <div class="stats-help-modal__backdrop"></div>
+    <div class="stats-help-modal__content">
+      <h3>Glosario de estadísticas</h3>
+      <dl class="stats-glossary">
+        <dt>SLpM</dt><dd>Golpes significativos conectados por minuto</dd>
+        <dt>SApM</dt><dd>Golpes significativos recibidos por minuto</dd>
+        <dt>Str. Acc.</dt><dd>Precisión de golpeo (% de golpes que conectan)</dd>
+        <dt>Str. Def.</dt><dd>Defensa de golpeo (% de golpes que evita)</dd>
+        <dt>TD Avg.</dt><dd>Promedio de derribos por pelea</dd>
+        <dt>TD Def.</dt><dd>Defensa ante derribos (% de intentos que detiene)</dd>
+      </dl>
+      <button type="button" class="stats-help-modal__close">Cerrar</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -156,35 +156,39 @@ def extraer_perfil_peleador(page, url_perfil: str) -> dict | None:
     body_text = page.inner_text("body")
 
     # Atributos básicos (Height, Weight, Reach, Stance, DOB)
+    # ufcstats.com muestra "HEIGHT:", "REACH:" en mayúsculas
     height = weight = reach = stance = dob = ""
-    list_items = page.locator("li.b-list__box-list-item, li.b-list_box-list-item")
+    list_items = page.locator(
+        "li.b-list__box-list-item, li.b-list_box-list-item, li.b-list_box-list-item_type_block"
+    )
     for i in range(list_items.count()):
         text = list_items.nth(i).inner_text().strip()
-        if text.startswith("Height:"):
-            height = text.replace("Height:", "").strip()
-        elif text.startswith("Weight:"):
-            weight = text.replace("Weight:", "").strip()
-        elif text.startswith("Reach:"):
-            reach = text.replace("Reach:", "").strip()
-        elif text.startswith("STANCE:"):
-            stance = text.replace("STANCE:", "").strip()
-        elif text.startswith("DOB:"):
-            dob = text.replace("DOB:", "").strip()
+        text_lower = text.lower()
+        if text_lower.startswith("height:"):
+            height = re.sub(r"^height:\s*", "", text, flags=re.I).strip()
+        elif text_lower.startswith("weight:"):
+            weight = re.sub(r"^weight:\s*", "", text, flags=re.I).strip()
+        elif text_lower.startswith("reach:"):
+            reach = re.sub(r"^reach:\s*", "", text, flags=re.I).strip()
+        elif text_lower.startswith("stance:"):
+            stance = re.sub(r"^stance:\s*", "", text, flags=re.I).strip()
+        elif text_lower.startswith("dob:"):
+            dob = re.sub(r"^dob:\s*", "", text, flags=re.I).strip()
     # Fallback desde body si los li no matchean
-    if not height and "Height:" in body_text:
-        m = re.search(r"Height:\s*([^\n]+)", body_text)
+    if not height:
+        m = re.search(r"height:\s*([^\n]+)", body_text, re.I)
         height = m.group(1).strip() if m else ""
-    if not weight and "Weight:" in body_text:
-        m = re.search(r"Weight:\s*([^\n]+)", body_text)
+    if not weight:
+        m = re.search(r"weight:\s*([^\n]+)", body_text, re.I)
         weight = m.group(1).strip() if m else ""
-    if not reach and "Reach:" in body_text:
-        m = re.search(r"Reach:\s*([^\n]+)", body_text)
+    if not reach:
+        m = re.search(r"reach:\s*([^\n]+)", body_text, re.I)
         reach = m.group(1).strip() if m else ""
-    if not stance and "STANCE:" in body_text:
-        m = re.search(r"STANCE:\s*([^\n]+)", body_text)
+    if not stance:
+        m = re.search(r"stance:\s*([^\n]+)", body_text, re.I)
         stance = m.group(1).strip() if m else ""
-    if not dob and "DOB:" in body_text:
-        m = re.search(r"DOB:\s*([^\n]+)", body_text)
+    if not dob:
+        m = re.search(r"dob:\s*([^\n]+)", body_text, re.I)
         dob = m.group(1).strip() if m else ""
 
     # Career Statistics: parsear desde li.b-list_box-list-item_type_block o desde body como fallback
@@ -233,6 +237,40 @@ def extraer_perfil_peleador(page, url_perfil: str) -> dict | None:
     if sub_avg is None and ("Sub. Avg.:" in body_text or "Sub. Avg:" in body_text):
         sub_avg = _parse_stat_value(_extract(re.search(r"Sub\.\s*Avg\.?\s*:\s*([\d.%]+)", body_text)))
 
+    # Últimas 3 peleas (W/L): tabla de historial de peleas
+    ultimas_peleas = []
+    fight_rows = page.locator("tr.b-fight-details__table-row.b-fight-details__table-row__hover.js-fight-details-click")
+    for i in range(min(fight_rows.count(), 3)):
+        row = fight_rows.nth(i)
+        first_col = row.locator("td").first
+        if first_col.count():
+            result_text = first_col.inner_text().strip().upper()
+            if "WIN" in result_text:
+                ultimas_peleas.append("W")
+            elif "LOSS" in result_text:
+                ultimas_peleas.append("L")
+            elif "DRAW" in result_text or "NC" in result_text:
+                ultimas_peleas.append("D")
+            else:
+                ultimas_peleas.append("—")
+
+    # Fallback: si no se encontraron filas con esa clase, intentar con la tabla general
+    if not ultimas_peleas:
+        fight_rows_alt = page.locator("table.b-fight-details__table tr.b-fight-details__table-row")
+        for i in range(min(fight_rows_alt.count(), 3)):
+            row = fight_rows_alt.nth(i)
+            first_col = row.locator("td").first
+            if first_col.count():
+                result_text = first_col.inner_text().strip().upper()
+                if "WIN" in result_text:
+                    ultimas_peleas.append("W")
+                elif "LOSS" in result_text:
+                    ultimas_peleas.append("L")
+                elif "DRAW" in result_text or "NC" in result_text:
+                    ultimas_peleas.append("D")
+                else:
+                    ultimas_peleas.append("—")
+
     return {
         "nombre": nombre,
         "record": record,
@@ -241,6 +279,7 @@ def extraer_perfil_peleador(page, url_perfil: str) -> dict | None:
         "reach": reach,
         "stance": stance,
         "dob": dob,
+        "ultimas_peleas": ultimas_peleas,
         "striking": {
             "slpm": slpm,
             "str_acc": str_acc,
@@ -262,6 +301,47 @@ def guardar_json(resultado: dict) -> None:
     with open(json_path, "w", encoding="utf-8") as f:
         json.dump(resultado, f, ensure_ascii=False, indent=2)
     print(f"Guardado: {json_path}")
+
+
+def ejecutar_scraper() -> dict | None:
+    """
+    Ejecuta el scraping completo y retorna el resultado en memoria (sin guardar archivos).
+    Retorna dict con evento, peleas, extraido_en; o None si falla.
+    """
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        context = browser.new_context(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+        )
+        page = context.new_page()
+
+        try:
+            evento = extraer_evento_proximo(page)
+            if not evento:
+                return None
+
+            peleas, fecha = extraer_peleas(page, evento["url_detalles"])
+            evento["fecha"] = fecha
+
+            perfiles_vistos = set()
+            for pelea in peleas:
+                for key in ("peleador_1", "peleador_2"):
+                    p_info = pelea[key]
+                    url = p_info["perfil"]
+                    if url and url not in perfiles_vistos:
+                        perfiles_vistos.add(url)
+                        perfil_data = extraer_perfil_peleador(page, url)
+                        if perfil_data:
+                            p_info["estadisticas"] = perfil_data
+                        time.sleep(REQUEST_DELAY)
+
+            return {
+                "evento": evento,
+                "peleas": peleas,
+                "extraido_en": datetime.now().isoformat(),
+            }
+        finally:
+            browser.close()
 
 
 def main() -> None:

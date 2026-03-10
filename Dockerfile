@@ -1,0 +1,21 @@
+# Imagen oficial de Playwright con Python y Chromium preinstalado
+FROM mcr.microsoft.com/playwright/python:v1.40.0-jammy
+
+WORKDIR /app
+
+# Copiar e instalar dependencias Python
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copiar el código de la aplicación
+COPY server.py .
+COPY frontend/ frontend/
+COPY predictor/ predictor/
+COPY scraper/ scraper/
+
+# Puerto por defecto (Railway inyecta PORT)
+ENV PORT=5000
+EXPOSE 5000
+
+# Usar shell para expandir $PORT en runtime
+CMD ["sh", "-c", "gunicorn --bind 0.0.0.0:${PORT} server:app"]
